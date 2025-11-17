@@ -8,83 +8,83 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Luxury Wedding Theme - Champagne Gold & Burgundy */
-    --background: 36 44% 98%;
-    --foreground: 225 15% 15%;
+    /* European Luxury Black & Gold Theme */
+    --background: 0 0% 8%;
+    --foreground: 45 100% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 225 15% 15%;
+    --card: 0 0% 12%;
+    --card-foreground: 45 100% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 225 15% 15%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 45 100% 88%;
 
-    /* Champagne Gold - Primary luxury color */
-    --primary: 45 65% 52%;
-    --primary-foreground: 225 15% 15%;
+    /* Royal Gold - Primary luxury color */
+    --primary: 45 100% 58%;
+    --primary-foreground: 0 0% 8%;
     
-    /* Deep Burgundy - Accent color */
-    --accent: 343 76% 32%;
-    --accent-foreground: 0 0% 100%;
+    /* Champagne Gold - Accent color */
+    --accent: 42 88% 65%;
+    --accent-foreground: 0 0% 8%;
 
-    /* Rose Gold - Secondary accent */
-    --secondary: 15 45% 65%;
-    --secondary-foreground: 225 15% 15%;
+    /* Dark Gold - Secondary accent */
+    --secondary: 38 70% 45%;
+    --secondary-foreground: 45 100% 88%;
 
-    /* Cream background for sections */
-    --muted: 36 33% 95%;
-    --muted-foreground: 225 10% 40%;
+    /* Deep black for sections */
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 30% 60%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 36 20% 88%;
-    --input: 36 20% 88%;
-    --ring: 45 65% 52%;
+    --border: 45 30% 25%;
+    --input: 0 0% 18%;
+    --ring: 45 100% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     
     /* Luxury gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(45 65% 52%), hsl(35 70% 60%));
-    --gradient-burgundy: linear-gradient(135deg, hsl(343 76% 32%), hsl(343 60% 42%));
-    --gradient-elegant: linear-gradient(135deg, hsl(36 44% 98%), hsl(36 33% 95%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 58%), hsl(42 88% 65%));
+    --gradient-black-gold: linear-gradient(135deg, hsl(0 0% 8%), hsl(38 70% 25%));
+    --gradient-elegant: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
     
     /* Shadows for luxury feel */
-    --shadow-elegant: 0 10px 40px -10px hsl(45 65% 52% / 0.2);
-    --shadow-soft: 0 4px 20px -4px hsl(225 15% 15% / 0.1);
-    --shadow-glow: 0 0 30px hsl(45 65% 52% / 0.3);
+    --shadow-elegant: 0 10px 60px -10px hsl(45 100% 58% / 0.4);
+    --shadow-soft: 0 8px 30px -4px hsl(45 100% 58% / 0.2);
+    --shadow-glow: 0 0 40px hsl(45 100% 58% / 0.5);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 225 20% 10%;
-    --foreground: 36 44% 98%;
+    --background: 0 0% 5%;
+    --foreground: 45 100% 90%;
 
-    --card: 225 18% 14%;
-    --card-foreground: 36 44% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 45 100% 88%;
 
-    --popover: 225 18% 14%;
-    --popover-foreground: 36 44% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 45 100% 88%;
 
-    --primary: 45 65% 52%;
-    --primary-foreground: 225 15% 15%;
+    --primary: 45 100% 60%;
+    --primary-foreground: 0 0% 5%;
     
-    --accent: 343 76% 42%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 90% 68%;
+    --accent-foreground: 0 0% 5%;
 
-    --secondary: 15 45% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 38 75% 48%;
+    --secondary-foreground: 45 100% 88%;
 
-    --muted: 225 15% 20%;
-    --muted-foreground: 36 20% 70%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 45 25% 65%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 225 15% 25%;
-    --input: 225 15% 25%;
-    --ring: 45 65% 52%;
+    --border: 45 25% 28%;
+    --input: 0 0% 20%;
+    --ring: 45 100% 60%;
   }
 }
 
@@ -100,6 +100,8 @@ All colors MUST be HSL.
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
   
   html {
