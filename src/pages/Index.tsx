@@ -272,6 +272,8 @@ const Index = () => {
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeFilter.toLowerCase());
 
+  const currentYear = new Date().getFullYear();
+
   // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -657,7 +659,7 @@ const Index = () => {
             <div className="text-center mb-12 animate-on-scroll">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant hover-glow text-lg px-10 py-6 font-semibold"
+                className="w-full max-w-sm mx-auto bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant hover-glow text-lg px-8 py-6 font-semibold"
                 onClick={() => window.open('https://wa.me/6281234567890', '_blank')}
               >
                 <MessageCircle className="mr-2 h-6 w-6" />
@@ -734,11 +736,134 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-background border-t border-primary/20">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-foreground/60">
-            © 2024 Topeng Event Organizer. All rights reserved.
-          </p>
+      <footer className="bg-background/95 border-t border-primary/20">
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid gap-12 lg:grid-cols-4">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shadow-soft">
+                  <Crown className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <div>
+                  <p className="text-sm uppercase tracking-[0.4em] text-primary/70">Topeng</p>
+                  <p className="font-serif text-2xl font-bold text-primary tracking-wide">Luxury Events</p>
+                </div>
+              </div>
+              <p className="text-foreground/70 leading-relaxed">
+                Event organizer premium yang menghadirkan eksekusi megah, elegan, dan penuh detail untuk setiap momen istimewa Anda.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {["Luxury Planning", "Detail Execution", "Premium Vendors"].map((tag) => (
+                  <Badge key={tag} className="bg-primary/10 text-primary border-primary/20">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm uppercase tracking-[0.4em] text-primary/70 mb-6">Menu</p>
+              <ul className="space-y-3 text-foreground/70">
+                {[
+                  { label: language === "id" ? "Tentang Kami" : "About Us", href: "#about" },
+                  { label: language === "id" ? "Layanan" : "Services", href: "#services" },
+                  { label: language === "id" ? "Portfolio" : "Portfolio", href: "#portfolio" },
+                  { label: language === "id" ? "Testimoni" : "Testimonials", href: "#testimonials" },
+                  { label: language === "id" ? "Kontak" : "Contact", href: "#contact" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="hover:text-primary transition-colors tracking-wide text-sm font-medium"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <p className="text-sm uppercase tracking-[0.4em] text-primary/70">Kontak</p>
+              <div className="space-y-4 text-foreground/70">
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 text-primary mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">WhatsApp</p>
+                    <p className="text-base">{text.contact.phone}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 text-primary mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">Email</p>
+                    <p className="text-base">{text.contact.email}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-primary mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">{language === "id" ? "Kantor" : "Office"}</p>
+                    <p className="text-base leading-relaxed">{text.contact.address}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-primary mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">{language === "id" ? "Jam Operasional" : "Hours"}</p>
+                    <p className="text-base">{text.contact.hours}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <p className="text-sm uppercase tracking-[0.4em] text-primary/70">
+                {language === "id" ? "Konsultasi Cepat" : "Quick Consultation"}
+              </p>
+              <p className="text-foreground/70 leading-relaxed">
+                {language === "id"
+                  ? "Bagikan detail event Anda dan tim kami akan mengkurasi konsep terbaik dalam 24 jam."
+                  : "Share your event details and we will curate the finest concept within 24 hours."}
+              </p>
+              <Button
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-elegant"
+                onClick={() => window.open("https://wa.me/6281234567890", "_blank")}
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                {language === "id" ? "Hubungi via WhatsApp" : "Chat via WhatsApp"}
+              </Button>
+              <div className="flex gap-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="border-primary/30 hover:bg-primary/10"
+                  onClick={() => window.open("https://instagram.com", "_blank")}
+                >
+                  <Instagram className="w-5 h-5 text-primary" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="border-primary/30 hover:bg-primary/10"
+                  onClick={() => window.open("https://facebook.com", "_blank")}
+                >
+                  <Facebook className="w-5 h-5 text-primary" />
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-primary/10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p className="text-foreground/60 text-sm">
+              © {currentYear} Topeng Event Organizer. All rights reserved.
+            </p>
+            <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.4em] text-primary/60">
+              <span>{language === "id" ? "Elegan" : "Elegant"}</span>
+              <span>{language === "id" ? "Detail" : "Detail"}</span>
+              <span>{language === "id" ? "Eksklusif" : "Exclusive"}</span>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
